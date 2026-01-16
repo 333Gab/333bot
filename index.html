@@ -54,13 +54,15 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .theme-toggle:hover {
             transform: scale(1.05);
             border-color: var(--accent-primary);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
         }
 
         .theme-toggle svg {
@@ -76,7 +78,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -84,44 +86,51 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 800px;
+            height: 800px;
             background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
-            opacity: 0.15;
-            top: -300px;
+            opacity: 0.2;
+            top: -400px;
             left: 50%;
             transform: translateX(-50%);
             animation: pulse 4s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.15; }
-            50% { transform: translateX(-50%) scale(1.1); opacity: 0.25; }
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.2; }
+            50% { transform: translateX(-50%) scale(1.15); opacity: 0.3; }
         }
 
         .logo {
-            font-size: 120px;
+            font-size: 140px;
             font-weight: 900;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 20px;
-            letter-spacing: -5px;
+            letter-spacing: -8px;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.2;
+            position: relative;
+            z-index: 1;
         }
 
         .subtitle {
-            font-size: 24px;
+            font-size: 26px;
             color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 700px;
+            margin-bottom: 50px;
+            max-width: 800px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-buttons {
@@ -129,66 +138,73 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
-            padding: 16px 40px;
+            padding: 18px 45px;
             border-radius: 50px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid transparent;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             color: white;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 20px 50px rgba(139, 92, 246, 0.6);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--bg-card);
             color: var(--text-primary);
             border-color: var(--border-color);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
             border-color: var(--accent-primary);
-            background: var(--bg-card);
+            transform: translateY(-3px);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
         .section-title {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-subtitle {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--text-secondary);
             text-align: center;
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 70px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 80px;
         }
@@ -196,126 +212,370 @@
         .feature-card {
             background: var(--bg-card);
             border: 2px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
+            border-radius: 28px;
+            padding: 45px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(20px);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--accent-primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 16px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 30px;
+            margin-bottom: 24px;
+            font-size: 35px;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
         }
 
         .feature-title {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .feature-description {
             color: var(--text-secondary);
             line-height: 1.8;
+            font-size: 16px;
         }
 
         .platforms {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
-            margin: 60px 0;
+            margin: 70px 0;
         }
 
         .platform-badge {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            padding: 30px;
+            gap: 20px;
+            padding: 40px;
             background: var(--bg-card);
             border: 2px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 24px;
             transition: all 0.3s ease;
-            min-width: 150px;
+            min-width: 180px;
+            backdrop-filter: blur(20px);
         }
 
         .platform-badge:hover {
-            transform: scale(1.05);
+            transform: translateY(-8px) scale(1.05);
             border-color: var(--accent-primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         .platform-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .platform-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: white;
         }
 
         .whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
-        .discord { background: linear-gradient(135deg, #5865F2, #7289da); }
+        .discord { background: linear-gradient(135deg, #5865F2, #404EED); }
         .telegram { background: linear-gradient(135deg, #0088cc, #229ED9); }
+
+        .platform-name {
+            font-size: 20px;
+            font-weight: 700;
+        }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            gap: 35px;
+            margin: 70px 0;
         }
 
         .stat-card {
             text-align: center;
-            padding: 40px;
+            padding: 50px 30px;
             background: var(--bg-card);
             border: 2px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
         }
 
         .stat-number {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 900;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .stat-label {
             color: var(--text-secondary);
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 70px 0;
+        }
+
+        .staff-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 28px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .staff-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .staff-role {
+            color: var(--accent-primary);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .staff-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-primary);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .staff-name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-btn {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 32px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 24px;
+            color: var(--text-primary);
+        }
+
+        .modal-close:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-primary);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .modal-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .modal-role {
+            color: var(--accent-primary);
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .portfolio-item-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .portfolio-item-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 32px;
+            margin: 70px 0;
+            box-shadow: 0 25px 60px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-box h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-box p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+
+        .cta-box .btn {
+            background: white;
+            color: var(--accent-primary);
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: var(--bg-secondary);
             color: var(--text-secondary);
             border-top: 2px solid var(--border-color);
         }
 
         @media (max-width: 768px) {
-            .logo { font-size: 80px; }
+            .logo { font-size: 90px; }
             h1 { font-size: 36px; }
             .subtitle { font-size: 18px; }
-            .section-title { font-size: 32px; }
-            .cta-buttons { flex-direction: column; }
-            .btn { width: 100%; }
+            .section-title { font-size: 36px; }
+            .modal-content { padding: 30px; }
         }
     </style>
 </head>
@@ -336,94 +596,93 @@
         <p class="subtitle">Bot multifunzione e multipiattaforma con intelligenza artificiale avanzata. Gestisci community, automatizza task e molto altro su WhatsApp, Discord e Telegram.</p>
         <div class="cta-buttons">
             <a href="#features" class="btn btn-primary">Scopri le Funzionalità</a>
-            <a href="#platforms" class="btn btn-secondary">Piattaforme Supportate</a>
+            <a href="#staff" class="btn btn-secondary">Incontra lo Staff</a>
         </div>
     </section>
 
     <div class="container" id="features">
         <h2 class="section-title">Funzionalità Avanzate</h2>
-        <p class="section-subtitle">333 Bot offre una suite completa di strumenti professionali per gestire e automatizzare le tue community</p>
+        <p class="section-subtitle">333 Bot offre una suite completa di strumenti professionali</p>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🤖</div>
                 <h3 class="feature-title">Intelligenza Artificiale</h3>
-                <p class="feature-description">AI avanzata per conversazioni naturali, risposte automatiche intelligenti e apprendimento continuo dalle interazioni degli utenti.</p>
+                <p class="feature-description">AI avanzata per conversazioni naturali, risposte automatiche intelligenti e apprendimento continuo.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🛡️</div>
                 <h3 class="feature-title">Moderazione Automatica</h3>
-                <p class="feature-description">Sistema di moderazione automatico con rilevamento spam, filtri per contenuti inappropriati e gestione automatica dei ruoli.</p>
+                <p class="feature-description">Sistema di moderazione con rilevamento spam e filtri per contenuti inappropriati.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
                 <h3 class="feature-title">Analytics Avanzate</h3>
-                <p class="feature-description">Statistiche dettagliate su messaggi, utenti attivi, engagement e metriche personalizzate per ottimizzare la tua community.</p>
+                <p class="feature-description">Statistiche dettagliate su messaggi, utenti attivi e metriche personalizzate.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🎮</div>
-                <h3 class="feature-title">Mini-Games Integrati</h3>
-                <p class="feature-description">Giochi interattivi, quiz, trivia e sfide per mantenere la community attiva e coinvolta con classifiche e premi.</p>
+                <h3 class="feature-title">Mini-Games</h3>
+                <p class="feature-description">Giochi interattivi, quiz e sfide con classifiche e premi.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🔔</div>
                 <h3 class="feature-title">Notifiche Smart</h3>
-                <p class="feature-description">Sistema di notifiche personalizzabili per eventi, promemoria, avvisi automatici e alert programmati.</p>
+                <p class="feature-description">Sistema di notifiche personalizzabili per eventi e promemoria.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🎵</div>
                 <h3 class="feature-title">Music Player</h3>
-                <p class="feature-description">Riproduzione musicale di alta qualità da YouTube, Spotify e SoundCloud con playlist condivise e controlli vocali.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3 class="feature-title">Comandi Personalizzati</h3>
-                <p class="feature-description">Crea comandi custom illimitati con variabili, condizioni e automazioni avanzate per il tuo server.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">Multilingua</h3>
-                <p class="feature-description">Supporto per oltre 50 lingue con traduzione automatica in tempo reale per community internazionali.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Performance Ottimali</h3>
-                <p class="feature-description">Uptime del 99.9%, velocità di risposta istantanea e infrastruttura cloud scalabile per qualsiasi dimensione.</p>
+                <p class="feature-description">Riproduzione musicale da YouTube, Spotify e SoundCloud.</p>
             </div>
         </div>
     </div>
 
     <div class="container" id="platforms">
         <h2 class="section-title">Multipiattaforma</h2>
-        <p class="section-subtitle">333 Bot funziona perfettamente su tutte le principali piattaforme di messaggistica</p>
+        <p class="section-subtitle">Funziona su tutte le principali piattaforme</p>
         
         <div class="platforms">
             <div class="platform-badge">
-                <div class="platform-icon whatsapp">📱</div>
-                <strong>WhatsApp</strong>
+                <div class="platform-icon whatsapp">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </div>
+                <span class="platform-name">WhatsApp</span>
             </div>
             <div class="platform-badge">
-                <div class="platform-icon discord">🎮</div>
-                <strong>Discord</strong>
+                <div class="platform-icon discord">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                    </svg>
+                </div>
+                <span class="platform-name">Discord</span>
             </div>
             <div class="platform-badge">
-                <div class="platform-icon telegram">✈️</div>
-                <strong>Telegram</strong>
+                <div class="platform-icon telegram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </div>
+                <span class="platform-name">Telegram</span>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <h2 class="section-title">I Numeri di 333 Bot</h2>
-        <p class="section-subtitle">Cifre che dimostrano l'affidabilità e la popolarità del nostro bot</p>
+        <h2 class="section-title">I Numeri</h2>
+        <p class="section-subtitle">Cifre che dimostrano l'affidabilità del bot</p>
+        
+ 
+<div class="container">
+        <h2 class="section-title">I Numeri</h2>
+        <p class="section-subtitle">Cifre che dimostrano l'affidabilità del bot</p>
         
         <div class="stats-grid">
             <div class="stat-card">
@@ -445,13 +704,118 @@
         </div>
     </div>
 
+    <div class="container" id="staff">
+        <h2 class="section-title">Staff</h2>
+        <p class="section-subtitle">Incontra il team dietro 333 Bot</p>
+        
+        <div class="staff-grid">
+            <div class="staff-card">
+                <div class="staff-role">Proprietario</div>
+                <img src="https://https://qu.ax/RZciS" alt="Gab" class="staff-avatar">
+                <h3 class="staff-name">Gab</h3>
+                <button class="portfolio-btn" onclick="openModal('gab')">Visualizza Portfolio</button>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-role">Co-Owner</div>
+                <img src="https://via.placeholder.com/120" alt="Lucifero" class="staff-avatar">
+                <h3 class="staff-name">Lucifero</h3>
+                <button class="portfolio-btn" onclick="openModal('lucifero')">Visualizza Portfolio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Gab -->
+    <div id="modal-gab" class="modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('gab')">×</div>
+            <div class="modal-header">
+                <img src="https://qu.ax/RZciS" alt="Gab" class="modal-avatar">
+                <h2 class="modal-title">Gqbry333 (Gab)</h2>
+                <p class="modal-role">Proprietario & Lead Developer</p>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">
+                Full-Stack Developer specializzato in Python, Node.js e JavaScript. Creatore di bot multipiattaforma, gestore VPS e sviluppatore di siti web per aziende. Con oltre 500K utenti gestiti attraverso i suoi progetti.
+            </p>
+            <h3 style="font-size: 24px; margin-bottom: 20px;">Portfolio Progetti</h3>
+            <ul class="portfolio-list">
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🤖 333 Bot</div>
+                    <p class="portfolio-item-desc">Fondatore del bot più grande d'Italia su WhatsApp con oltre 500K utenti attivi. Sistema completo di AI, moderazione automatica e automazione avanzata.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">💬 ChatUnity WhatsApp</div>
+                    <p class="portfolio-item-desc">Co-Owner della piattaforma di comunicazione unificata per community WhatsApp con funzionalità enterprise.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🧠 ChatUnity AI</div>
+                    <p class="portfolio-item-desc">Proprietario del sistema di intelligenza artificiale proprietario per conversazioni naturali multilingua.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🎮 Bot Discord & Telegram</div>
+                    <p class="portfolio-item-desc">Creatore di bot multifunzione per Discord e Telegram con oltre 200 comandi personalizzabili.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🌐 ChatUnity Website</div>
+                    <p class="portfolio-item-desc">Sviluppatore del sito web completo con dashboard admin, gestione utenti e statistiche real-time.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">👨‍💼 Ex Staff</div>
+                    <p class="portfolio-item-desc">Ex Staff di Streamer, YouTuber e Bot Italiani Discord come BenveOG e SkyForce Bot (624k membri).</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal Lucifero -->
+    <div id="modal-lucifero" class="modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('lucifero')">×</div>
+            <div class="modal-header">
+                <img src="https://via.placeholder.com/100" alt="Lucifero" class="modal-avatar">
+                <h2 class="modal-title">Lucifero</h2>
+                <p class="modal-role">Co-Owner</p>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">
+                Co-Owner e sviluppatore esperto nel team di 333 Bot. Specializzato in gestione community e sviluppo di funzionalità avanzate per bot multipiattaforma.
+            </p>
+            <h3 style="font-size: 24px; margin-bottom: 20px;">Portfolio Progetti</h3>
+            <ul class="portfolio-list">
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🤖 333 Bot</div>
+                    <p class="portfolio-item-desc">Co-Owner del bot più grande d'Italia, contribuendo allo sviluppo e alla gestione della community.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">💬 ChatUnity</div>
+                    <p class="portfolio-item-desc">Collaboratore attivo nello sviluppo delle funzionalità di ChatUnity e gestione delle piattaforme.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">🛠️ Sviluppo Bot</div>
+                    <p class="portfolio-item-desc">Sviluppatore di features avanzate per bot Discord, Telegram e WhatsApp.</p>
+                </li>
+                <li class="portfolio-item">
+                    <div class="portfolio-item-title">👥 Community Manager</div>
+                    <p class="portfolio-item-desc">Gestione e moderazione di community con migliaia di utenti attivi.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container">
-        <div style="text-align: center; padding: 60px 20px; background: var(--bg-card); border-radius: 30px; border: 2px solid var(--border-color);">
-            <h2 style="font-size: 40px; margin-bottom: 20px;">Pronto a Iniziare?</h2>
-            <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px;">Unisciti a migliaia di community che già utilizzano 333 Bot</p>
+        <div style="text-align: center; padding: 50px 40px; background: var(--bg-card); border-radius: 24px; border: 2px solid var(--border-color); backdrop-filter: blur(20px); margin-bottom: 70px;">
+            <h3 style="font-size: 28px; margin-bottom: 15px;">In collaborazione con</h3>
+            <p style="font-size: 32px; font-weight: 800; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 25px;">deluxHost</p>
+            <a href="https://deluxhost.it" target="_blank" class="btn btn-primary" style="display: inline-block;">Visita il loro sito</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cta-box">
+            <h2>Pronto a Iniziare?</h2>
+            <p>Unisciti a migliaia di community che già utilizzano 333 Bot</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/393508337404" class="btn btn-primary">Aggiungi su WhatsApp</a>
-                <a href="https://discord.gg/pQkW2gn76k" class="btn btn-secondary">Unisciti a Discord</a>
+                <a href="https://wa.me/393508337404" class="btn">Aggiungi su WhatsApp</a>
+                <a href="https://discord.gg/pQkW2gn76k" class="btn">Unisciti a Discord</a>
             </div>
         </div>
     </div>
@@ -484,6 +848,26 @@
                 themeText.textContent = 'Scuro';
             }
         }
+
+        function openModal(staffName) {
+            document.getElementById('modal-' + staffName).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(staffName) {
+            document.getElementById('modal-' + staffName).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Chiudi modal cliccando fuori
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
 
         // Carica il tema salvato
         const savedTheme = localStorage.getItem('theme') || 'dark';
